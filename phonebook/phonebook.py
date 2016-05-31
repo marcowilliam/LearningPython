@@ -42,3 +42,38 @@ class Phonebook(object):
 		else:
 			print "pessoa nao encontrada"
 
+def main():
+
+	phonebook = Phonebook()
+	while True:
+		print "Selecione a opcao desejada"
+		print "1 - Adicionar numero"
+		print "2 - Mostrar lista"
+		print "3 - Procurar pessoa por nome ou numero"
+		print "4 - Deletar pessoa por nome ou numero"
+
+		opcao = raw_input()
+
+		if opcao == '1':
+			print "digite o nome"
+			nome = raw_input()
+			print "digite o numero"
+			numero = raw_input()
+			person = Person(nome, numero)
+			phonebook.add_person(person)
+
+		elif opcao == '2':
+			phonebook.show_people()
+		
+		elif opcao == '3':
+			print "Entre com o nome ou numero da pessoa"
+			search = raw_input()
+			phonebook.search_and_show_person(search)
+
+		elif opcao == '4':
+			print "Entre com o nome ou numero da pessoa"
+			search = raw_input()
+			phonebook.delete_person(search)
+
+		else:
+			print "opcaoo invalida"
